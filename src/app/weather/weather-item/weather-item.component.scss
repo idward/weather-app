@@ -1,0 +1,32 @@
+.col-1 {
+  float: left;
+}
+
+.col-2 {
+  float: right;
+}
+
+.col-1 h3 {
+  font-size: 20px;
+}
+
+.info {
+  color: #a5a5a5;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.temperature {
+  font-size: 20px;
+  margin-right: 50px;
+}
+
+.weather-element {
+  width: 600px;
+  height:80px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px #dfdfdf;
+  overflow: hidden;
+}
