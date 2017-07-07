@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { WeatherItemComponent } from './weather/weather-item/weather-item.component';
 import { WeatherListComponent } from './weather/weather-list/weather-list.component';
 import { WeatherSearchComponent } from './weather/weather-search/weather-search.component';
+import {WeatherItemService} from "./weather/weather-item.service";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { WeatherSearchComponent } from './weather/weather-search/weather-search.
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WeatherItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

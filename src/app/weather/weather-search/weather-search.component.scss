@@ -9,13 +9,14 @@
 .weather-search input {
   width: 300px;
   line-height: 25px;
-  border:1px solid #a5a5a5;
+  border: 1px solid #a5a5a5;
   border-radius: 4px;
+  padding: 0 5px;
 }
 
 .weather-search button {
   padding: 5px;
-  border:1px solid transparent;
+  border: 1px solid transparent;
   border-radius: 4px;
   background-color: #72cb63;
   color: white;
@@ -34,3 +35,19 @@
   background-color: rgba(114, 204, 99, 0.5);
 }
 
+/*placeholder*/
+::-webkit-input-placeholder {
+  color: #b2b2b2;
+}
+
+:-moz-placeholder {
+  color: #b2b2b2;
+}
+
+::-moz-placeholder {
+  color: #b2b2b2;
+}
+
+:-ms-input-placeholder {
+  color: #b2b2b2;
+}
