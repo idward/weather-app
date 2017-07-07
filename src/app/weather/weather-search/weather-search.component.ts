@@ -11,15 +11,15 @@ export class WeatherSearchComponent implements OnInit {
 
   constructor(@Inject(FormBuilder) fb:FormBuilder) {
     this.form = fb.group({
-      city: ['', Validators.required]
-    })
+      city: ['', [Validators.required]]
+    });
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log(this.form);
+    console.log('submit');
   }
 
 }
