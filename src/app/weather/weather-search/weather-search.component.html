@@ -1,11 +1,12 @@
 <section class="weather-search">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
     <label for="city">City</label>
-    <input type="text" id="city" formControlName="city" required placeholder="请输入城市名称">
+    <input type="text" id="city" formControlName="city" (input)="onSearchLocation(input.value)" #input
+           required placeholder="请输入城市名称">
     <button type="submit" [disabled]="!form.valid" [class.disabled]="!form.valid">Add City</button>
     <div *ngIf="form.controls.city.dirty && form.controls.city.errors?.required">城市名称不能为空</div>
   </form>
   <div>
-    <span class="info">City Found:</span> City Name
+    <span class="info">City Found:</span> {{data?.name}}
   </div>
 </section>

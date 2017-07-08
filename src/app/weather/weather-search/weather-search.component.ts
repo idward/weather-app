@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {WeatherItemService} from "../weather-item.service";
 import {WeatherItem} from "../weather-item.model";
+import {Subject} from "rxjs/Subject";
 
 @Component({
   selector: 'weather-search',
@@ -10,6 +11,8 @@ import {WeatherItem} from "../weather-item.model";
 })
 export class WeatherSearchComponent implements OnInit {
   form:FormGroup;
+  private searchStream = new Subject<string>();
+  data:any;
 
   constructor(@Inject(FormBuilder) fb:FormBuilder, private _weatherItemService:WeatherItemService) {
     this.form = fb.group({
@@ -18,6 +21,16 @@ export class WeatherSearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.searchStream
+      .debounceTime(800)
+      .distinctUntilChanged()
+      .switchMap((input:string) => this._weatherItemService.searchWeatherData(input))
+      .subscribe(
+        data => {
+          console.log(data);
+          this.data = data;
+        }
+      );
   }
 
   onSubmit() {
@@ -31,6 +44,10 @@ export class WeatherSearchComponent implements OnInit {
         err => console.log(err),
         () => console.log('Done!')
       );
+  }
+
+  onSearchLocation(cityName:string) {
+    this.searchStream.next(cityName);
   }
 
 }
