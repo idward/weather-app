@@ -8,6 +8,7 @@ import { WeatherItemComponent } from './weather/weather-item/weather-item.compon
 import { WeatherListComponent } from './weather/weather-list/weather-list.component';
 import { WeatherSearchComponent } from './weather/weather-search/weather-search.component';
 import {WeatherItemService} from "./weather/weather-item.service";
+import { SiderbarComponent } from './profile/siderbar/siderbar.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {WeatherItemService} from "./weather/weather-item.service";
     WeatherItemComponent,
     WeatherListComponent,
     WeatherSearchComponent,
+    SiderbarComponent,
   ],
   imports: [
     BrowserModule,

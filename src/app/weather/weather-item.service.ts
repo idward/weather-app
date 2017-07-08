@@ -27,6 +27,10 @@ export class WeatherItemService {
       .catch(this._handleError);
   }
 
+  cleanWeatherData(){
+    WEATHER_ITEMS.splice(0);
+  }
+
   private _handleError(err:any) {
     console.log('sever error:', err.json());  // debug
     if (err instanceof Response) {
